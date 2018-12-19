@@ -1,4 +1,4 @@
-# FogWorkFlowSim
+# Fogworkflowsim
 A Toolkit for Modeling and Simulation of Workflow Management System in Edge and Fog Computing Environments
 
 ## IMPORTANT
