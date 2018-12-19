@@ -1,4 +1,4 @@
-# fogsim
+# fogworkflowsim
 A Toolkit for Modeling and Simulation of Resource Management Techniques in Internet of Things, Edge and Fog Computing Environments
 
 ## IMPORTANT
