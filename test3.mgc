@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClassDiagram>
+    <Class name="org.fog.entities.FogBroker" x="186" y="115">
+        <AttributesDisplayFilter public-accepted="false"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="false"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+    </Class>
+    <Class name="org.workflowsim.WorkflowEngine" x="169" y="302">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="false"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="org.fog.entities.FogBroker"
+            endpointName="scheduler" kind="Simple"/>
+        <Association destinationClassName="org.workflowsim.Job"
+            endpointName="jobList" kind="Simple"/>
+        <Communication destinationClassName="org.fog.entities.FogBroker"/>
+        <Communication destinationClassName="org.workflowsim.Job"/>
+        <Communication destinationClassName="org.fog.placement.Controller"/>
+        <Communication destinationClassName="org.workflowsim.Task"/>
+    </Class>
+    <Class name="org.workflowsim.Job" x="398" y="265">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Extension destinationClassName="org.workflowsim.Task"/>
+        <Association destinationClassName="org.workflowsim.Task"
+            endpointName="taskList" kind="Simple"/>
+    </Class>
+    <Class name="org.workflowsim.WorkflowParser" x="493" y="466">
+        <AttributesDisplayFilter public-accepted="false"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="false"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="org.workflowsim.Task"
+            endpointName="mName2Task" kind="Simple"/>
+        <Association destinationClassName="org.workflowsim.Task"
+            endpointName="taskList" kind="Simple"/>
+        <Communication destinationClassName="org.workflowsim.Task"/>
+    </Class>
+    <Class name="org.fog.placement.Controller" x="177" y="573">
+        <AttributesDisplayFilter public-accepted="false"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="false"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="org.workflowsim.WorkflowEngine"
+            endpointName="wfEngine" kind="Simple"/>
+        <Association destinationClassName="org.fog.entities.FogDevice"
+            endpointName="fogDevices" kind="Simple"/>
+        <Communication destinationClassName="org.workflowsim.WorkflowEngine"/>
+        <Communication destinationClassName="org.workflowsim.Task"/>
+        <Communication destinationClassName="org.fog.entities.FogDevice"/>
+    </Class>
+    <Class name="org.workflowsim.Task" x="449" y="376">
+        <AttributesDisplayFilter public-accepted="false"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="false"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association destinationClassName="org.workflowsim.Task"
+            endpointName="childList" kind="Simple"/>
+        <Association destinationClassName="org.workflowsim.Task"
+            endpointName="parentList" kind="Simple"/>
+    </Class>
+    <Class name="org.workflowsim.ClusteringEngine" x="465" y="116">
+        <AttributesDisplayFilter public-accepted="false"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="false"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="org.workflowsim.WorkflowEngine"
+            endpointName="workflowEngine" kind="Simple"/>
+        <Association destinationClassName="org.workflowsim.Task"
+            endpointName="taskList" kind="Simple"/>
+        <Association destinationClassName="org.workflowsim.Job"
+            endpointName="jobList" kind="Simple"/>
+        <Communication destinationClassName="org.workflowsim.Task"/>
+    </Class>
+    <Class name="org.fog.entities.FogDevice" x="299" y="471">
+        <AttributesDisplayFilter public-accepted="false"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="false"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Communication destinationClassName="org.workflowsim.Job"/>
+        <Communication destinationClassName="org.workflowsim.Task"/>
+    </Class>
+    <Class name="org.workflowsim.WorkflowPlanner" x="678" y="365">
+        <AttributesDisplayFilter public-accepted="false"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"/>
+        <MethodDisplayFilter public-accepted="false"
+            private-accepted="false" protected-accepted="false"
+            default-accepted="false" static-accepted="false"
+            accessors-accepted="false" constructors-accepted="false"/>
+        <Association
+            destinationClassName="org.workflowsim.WorkflowParser"
+            endpointName="parser" kind="Simple"/>
+        <Association
+            destinationClassName="org.workflowsim.ClusteringEngine"
+            endpointName="clusteringEngine" kind="Simple"/>
+        <Association destinationClassName="org.workflowsim.Task"
+            endpointName="taskList" kind="Simple"/>
+        <Communication destinationClassName="org.workflowsim.WorkflowEngine"/>
+        <Communication destinationClassName="org.workflowsim.WorkflowParser"/>
+        <Communication destinationClassName="org.workflowsim.Task"/>
+        <Communication destinationClassName="org.workflowsim.ClusteringEngine"/>
+    </Class>
+</ClassDiagram>
