@@ -1,5 +1,5 @@
 # fogworkflowsim
-A Toolkit for Modeling and Simulation of workflow management system in Edge and Fog Computing Environments
+A Toolkit for Modeling and Simulation of Workflow Management System in Edge and Fog Computing Environments
 
 ## IMPORTANT
 Please check the `improv` branch for latest changes. Master branch has been left intact until complete testing.
